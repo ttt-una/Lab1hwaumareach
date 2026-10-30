@@ -6,22 +6,39 @@ public class L1ex {
 	public static void main(String[] args) {
 		
 		Scanner vin = new Scanner(System.in);
-		int b;
-		System.out.print("Enter a number: ");
-		int sum=0;
-		b=vin.nextInt();
-		if (b <0 ) {
-			System.out.print("Invalid input");
+		float[] M= new float[3] ;
+		char[] N={ 'a','b','c'};
+		System.out.println("Solve for X \n Equation: aX^2+bx+c=0");
+		for(int k=0;k<3;k++) {
+			System.out.println("pls give value to "+N[k]);
+			M[k]=vin.nextFloat();	
 		}
-		else {
-			for(int k=1000;k>=b;k--) {
-				System.out.print(k+ " ");
-				sum=sum+k;
-			}
-			System.out.println("\nsum is: " +sum);
-			float avg= (float)sum/(1000-b+1);
-			System.out.println("average is: " +avg);	
+
+		float a = M[0];
+	    float b = M[1];
+	    float c = M[2];
+	    
+	    if(a==0) {
+	    	double x = -c/b;
+	    	System.out.println("One real root: X = " + x);
+	    }
+	    else {
+		
+	    	float delta= (b*b)-(4*c*a);
+		
+		if (delta>0) {
+			 double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+	         double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+	         System.out.println("Two real roots: X1 = " + x1 + ", X2 = " + x2);	
 		}
+		else if (delta==0) { 
+			 double x = -b / (2 * a);
+	         System.out.println("One real root: X = " + x);
+		}
+		else { 
+			System.out.println("ERROR cant calculate");
+		}
+	    }
 		vin.close();
 	}	
 }
