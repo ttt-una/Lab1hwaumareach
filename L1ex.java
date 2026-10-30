@@ -32,5 +32,6 @@ public class L1ex {
         
         vin.close();
 
+
 	}	
 }
