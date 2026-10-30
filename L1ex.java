@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class L1ex {
 	public static void main(String[] args) {
-
+		
 		Scanner vin = new Scanner(System.in);
 		int b;
 		System.out.print("Enter a number: ");
